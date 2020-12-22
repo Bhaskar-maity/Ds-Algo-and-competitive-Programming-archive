@@ -1,3 +1,10 @@
+
+void swap(int* a, int* b)  
+{  
+    int t = *a;  
+    *a = *b;  
+    *b = t;  
+} 
 void bubbleSort(int arr[], int n)  
 {  
     int i, j;  
