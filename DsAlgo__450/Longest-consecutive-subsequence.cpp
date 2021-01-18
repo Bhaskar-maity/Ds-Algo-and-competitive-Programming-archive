@@ -12,14 +12,16 @@ int findLongestConseqSubseq(int a[], int n){
         }
 
         else{
+            //arr will not be distorted
             int count=0;
+            int x = a[i];
             while(1){
                 count++;
-                if(mp[a[i]+1]==0){
+                if(mp[x+1]==0){
                     break;
                 }
                 else{
-                    a[i]+=1;
+                    x+=1;
                 }
             }
 
