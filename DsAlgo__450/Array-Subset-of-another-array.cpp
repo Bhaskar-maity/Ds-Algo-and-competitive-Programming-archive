@@ -1,44 +1,36 @@
-#include <iostream>
-#include <unordered_map>
+#include <bits/stdc++.h>
 using namespace std;
-// #define ll long long
+typedef long long ll;
+
+string check(ll arr[], ll brr[], ll n, ll m){
+    if(m > n)
+        return "No";
+    unordered_map<ll, ll>mp;
+    for(ll i=0; i<n; i++)   mp[arr[i]]++;
+    
+    for(ll i=0; i<m; i++){
+        if(mp[brr[i]] == 0)
+            return "No";
+        mp[brr[i]]--;
+    }
+    return "Yes";
+}
 
 int main() {
-	//code
-	int t;
-	
-	cin>>t;
-	
-	while(t--){
-        int flag=0;
-	     int m,n;
-	    cin>>m>>n;
-	    int a1[m],a2[n];
-	    
-	    unordered_map<int ,int> h;
-	    for(int i=0; i<m; i++) {
-	        cin>>a1[i];
-	        h[ a1[i] ] =1;
-	    }
-
-        for(int i=0; i<n; i++) {
-	        cin>>a2[i];
-	        if(h.find(a2[i]) == h.end()) { 
-                flag = 1;
-                break;
-            }
-            else 
-                continue;
-	    }
-
-        if(flag == 1 ) {
-            cout<<"No"<<endl;
-        }
-        else
-        {
-            cout<<"Yes"<<endl;
-        }
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n, m;    cin>>n>>m;
+        ll arr[n], brr[m];
+        for(ll i=0; i<n; i++)   cin>>arr[i];
+        for(ll i=0; i<m; i++)   cin>>brr[i];
         
-	}
-	return 0;
+        cout<<check(arr, brr, n, m)<<"\n";
+
+    }
+    return 0;
 }
