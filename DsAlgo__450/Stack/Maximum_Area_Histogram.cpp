@@ -46,7 +46,7 @@ vector<int> nearest_smaller_to_right(int a[], int n){
     vector<int> right();
     stack<pair<int,int> > s;
     int pseudoIdx = n;
-    for(int i = n-1; i >=0; i++){
+    for(int i = n-1; i >=0; i--){
         if(s.size()==0){
             left.push_back(pseudoIdx);
 
