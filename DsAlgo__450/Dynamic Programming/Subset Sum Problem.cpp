@@ -1,6 +1,6 @@
 //https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
 
-int Subset_Sum_Problem(int arr[], int sum, int n) 
+bool Subset_Sum_Problem(int arr[], int sum, int n) 
 { 
     //tabulation matrix
     int t[n+1][sum+1];
