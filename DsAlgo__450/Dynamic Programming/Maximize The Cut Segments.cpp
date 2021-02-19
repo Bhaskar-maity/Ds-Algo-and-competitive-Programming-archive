@@ -1,4 +1,5 @@
 //https://practice.geeksforgeeks.org/problems/cutted-segments1642/1#
+//unbounded knapsack dymaic problem type
 
 int maximizeTheCuts(int n, int a, int b, int c)
 {
@@ -31,6 +32,7 @@ int maximizeTheCuts(int n, int a, int b, int c)
             dp[i]++;
         }
     }
+    
     //if dp[n] = -1, then we return 0.
     return max(dp[n], 0);
 }
