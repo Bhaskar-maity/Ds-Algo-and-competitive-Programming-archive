@@ -14,10 +14,10 @@ int lcs(int x, int y, string s1, string s2){
         for(int j = 1; j <= y; j++)
         {
             if(s1[i-1]==s2[j-1]){
-                t[x][y] = 1 + t[x-1][y-1];
+                t[i][j] = 1 + t[i-1][j-1];
             }
             else {
-                t[x][y] = max(t[x-1][y], t[x][y-1]);
+                t[i][j] = max(t[i-1][j], t[i][j-1]);
             }
         }
     }
