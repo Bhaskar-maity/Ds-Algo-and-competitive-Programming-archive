@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "random": "cpp",
-        "sort012cpp": "cpp"
+        "sort012cpp": "cpp",
+        "string": "cpp"
     }
 }
