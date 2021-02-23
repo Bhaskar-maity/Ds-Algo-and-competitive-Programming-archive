@@ -2,6 +2,7 @@
     "files.associations": {
         "random": "cpp",
         "sort012cpp": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "iostream": "cpp"
     }
 }
