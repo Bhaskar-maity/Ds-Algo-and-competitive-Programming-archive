@@ -3,6 +3,7 @@
         "random": "cpp",
         "sort012cpp": "cpp",
         "string": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "algorithm": "cpp"
     }
 }
