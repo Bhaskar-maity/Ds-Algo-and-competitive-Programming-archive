@@ -4,6 +4,7 @@
         "sort012cpp": "cpp",
         "string": "cpp",
         "iostream": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "*.tcc": "cpp"
     }
 }
