@@ -7,8 +7,8 @@ const int max_n = -1, inf = 1000111222;
 int t, n, k;
  
 int main() {
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
     cin >> t;
     while (t--) {
         cin >> n >> k;
