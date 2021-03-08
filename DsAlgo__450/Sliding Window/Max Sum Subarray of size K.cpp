@@ -6,8 +6,15 @@
 // 700
 // Explanation:
 // Arr3  + Arr4 =700,
-// which is maximum.
+// which is maximum
 
+/*--------------------------------
+sliding window technique
+
+ in sliding window we basically start i,j from 0, then check gap btw of i,j(j-i+1) is < window size(k), j++)
+
+and if j-i+1 == window size(k) then i++,j++ to put the gap of window size(k) and done some operations mentained in question
+------------------------------- */
 class Solution{
 public:
 //sliding window technique
