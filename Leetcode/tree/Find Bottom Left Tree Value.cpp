@@ -1,5 +1,6 @@
 //https://leetcode.com/problems/find-bottom-left-tree-value/
-
+// Input: root = [2,1,3]
+// Output: 1
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -11,6 +12,8 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+//bfs approach, where leftmost root stored after levelwise traversal
 class Solution {
 public:
     int findBottomLeftValue(TreeNode* root) {
