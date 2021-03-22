@@ -16,7 +16,7 @@ public:
 
         unordered_map<char,int> mp;
     
-        //sliding window
+        //sliding window (i to j is the window)
         int i=0,j=0,cnt=INT_MIN;
         int n = s.size();
         
@@ -32,7 +32,8 @@ public:
             
              
             if(msize < j-i+1){
-                //shinking window while map size < k(j-i+1)
+                //shinking window while map size < k, window size k= (j-i+1)
+                //as soon as I find a duplicate element then I start reducing window size
                 while(msize < j-i+1){
                     mp[s[i]]--;
                     if(mp[s[i]] == 0){
@@ -44,12 +45,15 @@ public:
                 
             }
 
+            //update cnt, if there no duplicate element
             else if(msize == j-i+1){
                 cnt=max(cnt, j-i+1);
-                j++;
+                
             }
 
-            
+            //thats caused problem, j++ should be outside of else if
+            // 
+            j++;
         }
 
         return cnt;
