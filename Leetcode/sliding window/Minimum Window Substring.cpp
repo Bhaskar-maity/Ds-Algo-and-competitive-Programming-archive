@@ -5,8 +5,10 @@
 class Solution {
 public:
     string minWindow(string s, string t) {
+        if(s.length() < t.length()) return "";
+        if(t==s) return s;
         unordered_map<char, int> mp;
-        string res;
+        string res="";
         for(int i = 0; i <t.size(); i++){
             mp[t[i]] ++;
         }
@@ -28,15 +30,15 @@ public:
                     }
 
                     if(mp.find(s[i]) != mp.end()){
-                        if(mp[s[i]] < 0){
-                            mp[s[i]]++;
-                            i++;
+                        mp[s[i]]++;
+                        if(mp[s[i]] > 0){
+                            
+                            cnt++;
                         }
-                        else cnt++;
+                        
                         
                     }
-                   
-                    //i++;
+                   i++;
                 }
 
             }
@@ -44,6 +46,7 @@ public:
 
         }
 
+        
         return res;
     }
 };
