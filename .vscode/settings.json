@@ -12,6 +12,7 @@
         "regex": "cpp",
         "utility": "cpp",
         "valarray": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "ostream": "cpp"
     }
 }
