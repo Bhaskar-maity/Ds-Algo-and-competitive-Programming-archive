@@ -5,7 +5,7 @@
 // Sample Output:
 
 // 1
-
+//time -o(n), space o(n)
 int Solution::repeatedNumber(const vector<int> &A) {
     bool a[A.size()] = {false};
 
