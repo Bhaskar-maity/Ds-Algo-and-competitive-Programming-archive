@@ -13,6 +13,7 @@
         "utility": "cpp",
         "valarray": "cpp",
         "unordered_map": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "vector": "cpp"
     }
 }
