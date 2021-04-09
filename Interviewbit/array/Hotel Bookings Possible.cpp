@@ -14,7 +14,7 @@
 // Output 1:
 
 //  0
-// time - o(nlogn)
+// time - o(nlogn), space-o(1)
 bool Solution::hotel(vector<int> &arrive, vector<int> &depart, int K) {
     sort(arrive.begin(), arrive.end());
     sort(depart.begin(), depart.end());
@@ -31,3 +31,19 @@ bool Solution::hotel(vector<int> &arrive, vector<int> &depart, int K) {
  
     return true;
 }
+
+//also using map this
+//https://www.youtube.com/watch?v=1i-cYKfwrNY
+// time - o(nlogn), space-o(n)
+bool Solution::hotel(vector<int> &arrive, vector<int> &depart, int K) {
+      map<int,int> m;
+      //in map arrive +1, depart -1
+      for(auto&i:arrive) m[i]++;
+      for(auto&i:depart) m[i]--;
+      int count = 0;
+      for(auto&i:m){
+          count+=i.second;
+          if(count<0 || count>K) return false;
+      }
+      return true;
+  }
