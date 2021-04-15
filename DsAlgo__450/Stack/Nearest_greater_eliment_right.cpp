@@ -52,7 +52,7 @@ vector<int> nearest_greater_to_right(int a[], int n){
 
 int main() 
 { 
-    int price[] = { 2, 30, 15, 10, 8, 25, 80 }; 
+    int price[] = { 2, 30, 15, 6 }; 
     
     int n = sizeof(price) / sizeof(price[0]); 
     printArray(price, n);
