@@ -1,3 +1,6 @@
+
+
+//https://www.interviewbit.com/problems/largest-rectangle-in-histogram/
 #include <bits/stdc++.h> 
 #include <iostream>
 using namespace std; 
@@ -8,8 +11,9 @@ void printArray(int arr[], int size)
         cout << arr[i] << " ";  
     cout << endl;  
 }
+
 vector<int> nearest_smaller_to_left(int a[], int n){
-    vector<int> left();
+    vector<int> left;
     stack<pair<int,int> > s;
     int pseudoIdx = -1;
     for(int i = 0; i < n; i++){
@@ -43,17 +47,17 @@ vector<int> nearest_smaller_to_left(int a[], int n){
 }
 
 vector<int> nearest_smaller_to_right(int a[], int n){
-    vector<int> right();
+    vector<int> right;
     stack<pair<int,int> > s;
     int pseudoIdx = n;
     for(int i = n-1; i >=0; i--){
         if(s.size()==0){
-            left.push_back(pseudoIdx);
+            right.push_back(pseudoIdx);
 
         }
 
         else if(s.size() > 0 && a[i]>s.top().first){
-            left.push_back(s.top().second);
+            right.push_back(s.top().second);
         }
 
         else if(s.size() > 0 && a[i]<=s.top().first){
@@ -61,12 +65,12 @@ vector<int> nearest_smaller_to_right(int a[], int n){
                 s.pop();
 
             if(s.size()==0){
-                left.push_back(pseudoIdx);
+                right.push_back(pseudoIdx);
 
             }
 
             else {
-                left.push_back(s.top().second);
+                right.push_back(s.top().second);
             }
         }
 
@@ -84,12 +88,12 @@ int Maximum_Area_Histogram(int arr[], int n){
 
     left = nearest_smaller_to_left(arr, n);
     right = nearest_smaller_to_right(arr, n);
-
+    int mx=0;
     for(int i =0; i < n; i++){
-        area[i] = (right[i] - left[i] -1) * arr[i];
+        mx = max(mx,(right[i] - left[i] -1) * arr[i]);
+        //area[i] = (right[i] - left[i] -1) * arr[i];
     }
-
-    int mx = max_element(area.begin(), area.end());
+    
     return mx;
 
 }
@@ -102,7 +106,7 @@ int main()
     printArray(price, n);
     
     int mx = Maximum_Area_Histogram(price,n);
-    cout << "Nearest_greater_element_left = " << mx << endl;
+    cout << "Max area histogram = " << mx << endl;
      
     
 
