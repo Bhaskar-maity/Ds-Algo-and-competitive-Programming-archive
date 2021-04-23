@@ -1,4 +1,11 @@
+// https://www.interviewbit.com/problems/merge-overlapping-intervals/
+// Given a collection of intervals, merge all overlapping intervals.
 
+// For example:
+
+// Given [1,3],[2,6],[8,10],[15,18],
+
+// return [1,6],[8,10],[15,18].
 
 /**
  * Definition for an interval.
@@ -9,25 +16,22 @@
  *     Interval(int s, int e) : start(s), end(e) {}
  * };
  */
-bool pred(Interval a, Interval b){
-        return a.start < b.start;
-
-    }
-
-vector<Interval> Solution::merge(vector<Interval> &A) {
-    // Do not write main() function.
-    // Do not read input, instead use the arguments to the function.
-    // Do not print the output, instead return values as specified
-    // Still have a doubt. Checkout www.interviewbit.com/pages/sample_codes/ for more details
-    
-    
-    sort(A.begin(), A.end(), pred);
-    for(int i = 1; i < A.size(); i++) {
-        if(A[i-1].end > A[i].start){
-            A[i-1].start = A[i].end;
-            A.erase(A.begin() + i + 1);
-        }
-    }
-
-    return A;
+bool compare (Interval a , Interval b)
+{
+    return a.start < b.start;
 }
+vector<Interval> Solution::merge(vector<Interval> &A) {
+    vector<Interval> ans;
+    sort(A.begin(), A.end() , compare);
+    for(int i =0; i< A.size();i++)
+    {
+        auto curr = A[i];
+        while(i+1 < A.size() && A[i+1].start <= curr.end)
+        {
+            i++;
+            curr.end = max(curr.end,A[i].end);
+        }
+        ans.push_back(curr);
+    }
+    return ans;
+    }
