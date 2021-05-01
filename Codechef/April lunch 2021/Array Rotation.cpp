@@ -1,5 +1,5 @@
 
-
+//https://www.codechef.com/problems/ARRROT
 
 #include <iostream>
 #include<bits/stdc++.h>
@@ -40,7 +40,7 @@ int main()
     for(ll i=0; i<n; i++){
         ll el;
         cin>>el;
-        sum= (sum + el) % md;
+        sum= (sum + el +md) % md;
         //sum%=md;
     }
     
