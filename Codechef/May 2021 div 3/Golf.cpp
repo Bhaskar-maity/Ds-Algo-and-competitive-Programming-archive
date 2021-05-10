@@ -19,6 +19,8 @@
 #define FOR(i, a, n) for(int i = a ; i <= n ; i++)
 #define ROF(i, n, a) for(int i = n ; i >= a ; i--)
 #define ins insert
+//https://www.codechef.com/MAY21C/problems/LKDNGOLF
+
 #define CASE(POINTER) cout << "Case #" << POINTER << ": ";
 #define readFile freopen("a.in", "r", stdin); freopen("a.out", "w", stdout);
 #define debug(n) cout << #n << " = " << n << endl;
@@ -39,24 +41,17 @@ int main()
     int f;
     while(t--){
        
-       f=0;
+       
        cin>>N>>x>>k;
-        size=N+1;
-       low=0, high=size;
-       while(low<=size || high>=0){
-           if(low == x || high == x){
-               f=1;
-               
-               break;
-           }
+       //it's a pattern found int this
+       ll rem= (N+1)%k;
+       //x%k == 0  [0%k] ==> for forward iterate
+       //x%k==rem  [(N+1)%k ]==> for backward iterate
+        if(x%k == 0 || x%k==rem) cout<<"YES"<<endl;
+       else cout<<"NO"<<endl;
 
-           low+=k;
-           high-=k;
-           
-       }
-
-        if(f==1) cout<<"YES"<<endl;
-        else cout<<"NO"<<endl;
+       
+        
     }
 
     return 0;
