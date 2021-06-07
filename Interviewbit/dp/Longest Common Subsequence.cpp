@@ -1,3 +1,16 @@
+// https://www.interviewbit.com/problems/longest-common-subsequence/
+// Example Input
+// Input 1:
+
+//  A = "abbcdgf"
+//  B = "bbadcgf"
+
+
+// Example Output
+// Output 1:
+
+//  5
+
 int Solution::solve(string A, string B) {
 
 int n = A.length(), m = B.length();
