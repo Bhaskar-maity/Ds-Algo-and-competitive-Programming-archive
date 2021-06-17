@@ -1,3 +1,12 @@
+// https://practice.geeksforgeeks.org/problems/array-subset-of-another-array2317/1
+// Input:
+// a1[] = {11, 1, 13, 21, 3, 7}
+// a2[] = {11, 3, 7, 1}
+// Output:
+// Yes
+// Explanation:
+// a2[] is a subset of a1[]
+
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
