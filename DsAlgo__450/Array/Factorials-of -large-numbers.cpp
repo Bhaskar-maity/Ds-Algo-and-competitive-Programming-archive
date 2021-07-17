@@ -1,3 +1,11 @@
+//https://practice.geeksforgeeks.org/problems/factorials-of-large-carrybers/0
+
+// Input: N = 10
+// Output: 3628800
+// Explanation :
+// 10! = 1*2*3*4*5*6*7*8*9*10 = 3628800
+
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
@@ -9,24 +17,24 @@ int main()
     int arr[100000] = {0};
     arr[0] = 1;
     int len = 1;
-    int x = 0;
-    int num = 0;
+    int idx = 0;
+    int carry = 0;
     while(q<=n)
     {
-        x=0;
-        num =0;
-        while(x<len)
+        idx=0;
+        carry =0;
+        while(idx<len)
         {
-            arr[x] = arr[x] *q;
-            arr[x] = arr[x]+num;
-            num = arr[x]/10;
-            arr[x] = arr[x]%10;
-            x++;
+            arr[idx] = arr[idx] *q;
+            arr[idx] = arr[idx]+carry;
+            carry = arr[idx]/10;
+            arr[idx] = arr[idx]%10;
+            idx++;
         }
-        while(num!=0)
+        while(carry!=0)
         {
-            arr[len] = num%10;
-            num = num/10;
+            arr[len] = carry%10;
+            carry = carry/10;
             len++;
         }
         q++;

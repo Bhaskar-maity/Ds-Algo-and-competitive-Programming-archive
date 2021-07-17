@@ -1,3 +1,10 @@
+// https://practice.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one2614/1
+// Input:
+// N = 5
+// A[] = {1, 2, 3, 4, 5}
+// Output:
+// 5 1 2 3 4
+
 #include <iostream>
 using namespace std;
 
